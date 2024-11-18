@@ -1,0 +1,10 @@
+#include "mt7621_doonink_fw40.dtsi"
+
+/ {
+	compatible = "doonink,fw40-16m", "doonink,fw40", "mediatek,mt7621-soc";
+	model = "Doonink FW40 (16M)";
+};
+
+&firmware {
+	reg = <0x50000 0xfb0000>;
+};

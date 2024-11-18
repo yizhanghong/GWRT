@@ -1623,7 +1623,7 @@ define Device/zbtlink_zbt-wg3526-16m
 	kmod-usb3 kmod-usb-ledtrig-usbport
   SUPPORTED_DEVICES += zbt-wg3526 zbt-wg3526-16M
 endef
-TARGET_DEVICES += zbtlink_zbt-wg3526-16m
+TARGET_DEVICES += zbtlink_zbt-wg3526-16m 
 
 define Device/zbtlink_zbt-wg3526-32m
   $(Device/dsa-migration)
@@ -1637,6 +1637,33 @@ define Device/zbtlink_zbt-wg3526-32m
   SUPPORTED_DEVICES += ac1200pro zbt-wg3526-32M
 endef
 TARGET_DEVICES += zbtlink_zbt-wg3526-32m
+ 
+define Device/doonink_fw40-16m
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Doonink
+  DEVICE_MODEL := FW40
+  DEVICE_VARIANT := 16M
+  DEVICE_PACKAGES := kmod-ata-ahci kmod-sdhci-mt7620 kmod-mt7603 kmod-mt76x2 \
+	kmod-usb3 kmod-usb-ledtrig-usbport
+  SUPPORTED_DEVICES += fw40 fw40-16M
+endef
+TARGET_DEVICES += doonink_fw40-16m
+
+
+define Device/doonink_fw40-32m
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 32448k
+  DEVICE_VENDOR := Doonink
+  DEVICE_MODEL := FW40
+  DEVICE_VARIANT := 32M
+  DEVICE_PACKAGES := kmod-ata-ahci kmod-sdhci-mt7620 kmod-mt7603 kmod-mt76x2 \
+	kmod-usb3 kmod-usb-ledtrig-usbport
+  SUPPORTED_DEVICES += fw40 fw40-32M
+endef
+TARGET_DEVICES += doonink_fw40-32m
 
 define Device/zio_freezio
   $(Device/dsa-migration)
